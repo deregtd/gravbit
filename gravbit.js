@@ -317,7 +317,7 @@ function render()
 	}
 
 	if (dotStartX && dotEndX) {
-		drawArrow(dotStartX, dotStartY, dotEndX, dotEndY, 0.007, colorRed, 0.001);
+		drawArrow(dotStartX, dotStartY, dotEndX, dotEndY, 0.01, colorRed, 0.003);
 	}
 
 	context.setTransform(1, 0, 0, 1, 0, 0);
@@ -328,6 +328,22 @@ function render()
 	context.textAlign = 'right';
 	context.fillStyle = 'white';
 	context.fillText('Level ' + (level + 1), baseSize, 0);
+
+	if (level === 0) {
+		// noob help
+		context.font = (baseSize/40) + 'px arial';
+		context.textBaseline = 'middle';
+		context.textAlign = 'center';
+		context.fillStyle = 'black';
+		context.fillText('Start', start.x * baseSize, start.y * baseSize);
+
+		// noob help
+		context.font = (baseSize/40) + 'px arial';
+		context.textBaseline = 'middle';
+		context.textAlign = 'center';
+		context.fillStyle = 'black';
+		context.fillText('Target', end.x * baseSize, end.y * baseSize);
+	}
 }
 
 function fillCircle(x, y, radius, color)
