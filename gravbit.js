@@ -1,6 +1,10 @@
-var colorRed = 'rgba(255, 50, 40, 0.7)';
-var colorYellow = 'rgba(255, 255, 40, 0.7)';
-var colorGray = 'rgba(255, 255, 255, 0.5)';
+var colorGreen = 'rgba(40, 210, 40, 1)';
+var colorBlue = 'rgba(40, 50, 220, 1)';
+var colorCyan = 'rgba(30, 210, 210, 1)';
+
+var colorRed = 'rgba(210, 50, 40, 1)';
+var colorYellow = 'rgba(255, 255, 40, 1)';
+var colorGray = 'rgba(140, 140, 140, 1)';
 
 // moving bodies?
 
@@ -9,54 +13,54 @@ var levels = [
 	{
 		maxPower: 0.7,
 		gravs: [
-			{ x: 0.5, y: 0.5, radius: 0.1, mass: 100, color: colorRed, obj: null }
+			{ x: 0.5, y: 0.5, radius: 0.1, mass: 100, color: colorRed }
 		],
-		start: { x: 0.1, y: 0.1, radius: 0.05, obj: null },
-		end: { x: 0.9, y: 0.9, radius: 0.05, obj: null }
+		start: { x: 0.1, y: 0.1, radius: 0.05 },
+		end: { x: 0.9, y: 0.9, radius: 0.05 }
 	},
 
 	// 1
 	{
 		maxPower: 0.5,
 		gravs: [
-			{ x: 0.9, y: 0.1, radius: 0.05, mass: 100, color: colorRed, obj: null },
-			{ x: 0.1, y: 0.9, radius: 0.05, mass: 100, color: colorRed, obj: null }
+			{ x: 0.9, y: 0.1, radius: 0.05, mass: 100, color: colorRed },
+			{ x: 0.1, y: 0.9, radius: 0.05, mass: 100, color: colorRed }
 		],
-		start: { x: 0.1, y: 0.1, radius: 0.05, obj: null },
-		end: { x: 0.9, y: 0.9, radius: 0.05, obj: null }
+		start: { x: 0.1, y: 0.1, radius: 0.05 },
+		end: { x: 0.9, y: 0.9, radius: 0.05 }
 	},
 
 	// 2
 	{
 		maxPower: 0.5,
 		gravs: [
-			{ x: 0.8, y: 0.5, radius: 0.2, mass: 100, color: colorYellow, obj: null },
-			{ x: 0.1, y: 0.5, radius: 0.05, mass: 100, color: colorRed, obj: null }
+			{ x: 0.8, y: 0.5, radius: 0.2, mass: 100, color: colorYellow },
+			{ x: 0.1, y: 0.5, radius: 0.05, mass: 100, color: colorRed }
 		],
-		start: { x: 0.9, y: 0.1, radius: 0.05, obj: null },
-		end: { x: 0.9, y: 0.9, radius: 0.05, obj: null }
+		start: { x: 0.9, y: 0.1, radius: 0.05 },
+		end: { x: 0.9, y: 0.9, radius: 0.05 }
 	},
 
 	// 3
 	{
 		maxPower: 1,
 		gravs: [
-			{ x: 0.4, y: 0.7, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.5, y: 0.7, radius: 0.05, mass: 50, color: colorRed, obj: null },
-			{ x: 0.6, y: 0.7, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.7, y: 0.7, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.8, y: 0.7, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.9, y: 0.7, radius: 0.05, mass: 0, color: colorGray, obj: null },
+			{ x: 0.4, y: 0.7, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.5, y: 0.7, radius: 0.05, mass: 50, color: colorRed },
+			{ x: 0.6, y: 0.7, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.7, y: 0.7, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.8, y: 0.7, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.9, y: 0.7, radius: 0.05, mass: 0, color: colorGray },
 
-			{ x: 0.1, y: 0.3, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.2, y: 0.3, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.3, y: 0.3, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.4, y: 0.3, radius: 0.05, mass: 0, color: colorGray, obj: null },
-			{ x: 0.5, y: 0.3, radius: 0.05, mass: 50, color: colorRed, obj: null },
-			{ x: 0.6, y: 0.3, radius: 0.05, mass: 0, color: colorGray, obj: null },
+			{ x: 0.1, y: 0.3, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.2, y: 0.3, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.3, y: 0.3, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.4, y: 0.3, radius: 0.05, mass: 0, color: colorGray },
+			{ x: 0.5, y: 0.3, radius: 0.05, mass: 50, color: colorRed },
+			{ x: 0.6, y: 0.3, radius: 0.05, mass: 0, color: colorGray },
 		],
-		start: { x: 0.5, y: 0.9, radius: 0.05, obj: null },
-		end: { x: 0.5, y: 0.1, radius: 0.05, obj: null }
+		start: { x: 0.5, y: 0.9, radius: 0.05 },
+		end: { x: 0.5, y: 0.1, radius: 0.05 }
 	},
 ];
 
@@ -70,51 +74,51 @@ var dotRadius = 0.01;
 // Unused for now -- possibly give dots mass later for combo dots that affect each other?
 var dotMass = 10;
 
-var tickTimer = null;
+var lastTimestamp;
 
-var body, main;
+var body, canvas, context;
 $( document ).ready(function() {
 	body = $(document.body);
-
-	body.mousedown(function(e) { startDot(e.pageX, e.pageY); });
-	body.on("touchstart", function(e) { startDot(e.originalEvent.touches[0].pageX, e.originalEvent.touches[0].pageY); });
-
-	body.mouseup(function(e) { endDot(e.pageX, e.pageY); });
-	body.on("touchend", function(e) { endDot(e.originalEvent.changedTouches[0].pageX, e.originalEvent.changedTouches[0].pageY); });
 
 	document.ontouchmove = function(event){
 		event.preventDefault();
 	};
 
+	canvas = $('<canvas />');
+
+	body.mousedown(function(e) { startDot(e.pageX, e.pageY); });
+	body.on("touchstart", function(e) { startDot(e.originalEvent.touches[0].pageX, e.originalEvent.touches[0].pageY); });
+
+	body.mousemove(function(e) { moveDot(e.pageX, e.pageY); });
+	body.on("touchmove", function(e) { moveDot(e.originalEvent.touches[0].pageX, e.originalEvent.touches[0].pageY); });
+
+	body.mouseup(function(e) { endDot(); });
+	body.on("touchend", function(e) { endDot(); });
+	
+	body.append(canvas);
+
+	context = canvas[0].getContext('2d');
+
 	rebuild();
+
+	resize();
+
+	lastTimestamp = performance.now();
+	window.requestAnimationFrame(tickFunc);
 });
 
 $(window).resize(function() {
-	build();
+	resize();
 });
 
-var baseSize = 0, baseX = 0, baseY = 0;
 function rebuild() {
 	dots = [];
-	main = null;
-	$(document.body).empty();
-	if (tickTimer) {
-		window.cancelAnimationFrame(tickTimer);
-		tickTimer = null;
-	}
 
 	// build level
 	start = levels[level].start;
-	start.obj = null;
 	end = levels[level].end;
-	end.obj = null;
 	gravs = levels[level].gravs;
-	for (var i=0; i<gravs.length; i++) {
-		gravs[i].obj = null;
-	}
 	maxPower = levels[level].maxPower;
-
-	build();
 }
 
 function nextLevel() {
@@ -128,13 +132,8 @@ function nextLevel() {
 	rebuild();
 }
 
-function build() {
-	if (!main)
-	{
-		main = $('<div id="main" />');
-		body.append(main);
-	}
-
+var baseSize = 0, baseX = 0, baseY = 0;
+function resize() {
 	var bWidth = body.width(), bHeight = body.height();
 	if (bHeight >= bWidth) {
 		// taller than wide
@@ -146,51 +145,14 @@ function build() {
 	}
 
 	baseSize = Math.min(bWidth, bHeight);
-	main.css({ top: baseY + 'px', height: baseSize + 'px', left: baseX + 'px', width: baseSize + 'px' });
 
-	if (!start.obj) {
-		start.obj = $('<div class="start" />');
-		main.append(start.obj);
-	}
+	canvas.css({ top: baseY + 'px', height: baseSize + 'px', left: baseX + 'px', width: baseSize + 'px' });
+	canvas[0].width = canvas[0].height = baseSize;
 
-	start.obj.css({
-		left: Math.round(baseSize * (start.x - start.radius)) + 'px',
-		top: Math.round(baseSize * (start.y - start.radius)) + 'px',
-		width: Math.round(baseSize * 2 * start.radius) + 'px',
-		height: Math.round(baseSize * 2 * start.radius) + 'px'
-	});
-
-	if (!end.obj) {
-		end.obj = $('<div class="end" />');
-		main.append(end.obj);
-	}
-
-	end.obj.css({
-		left: Math.round(baseSize * (end.x - end.radius)) + 'px',
-		top: Math.round(baseSize * (end.y - end.radius)) + 'px',
-		width: Math.round(baseSize * 2 * end.radius) + 'px',
-		height: Math.round(baseSize * 2 * end.radius) + 'px'
-	});
-
-	for (var i=0; i<gravs.length; i++) {
-		var grav = gravs[i];
-
-		if (!grav.obj) {
-			grav.obj = $('<div class="grav" />');
-			grav.obj.css({'background-color': grav.color});
-			main.append(grav.obj);
-		}
-
-		grav.obj.css({
-			left: Math.round(baseSize * (grav.x - grav.radius)) + 'px',
-			top: Math.round(baseSize * (grav.y - grav.radius)) + 'px',
-			width: Math.round(baseSize * 2 * grav.radius) + 'px',
-			height: Math.round(baseSize * 2 * grav.radius) + 'px'
-		});
-	}
+	context.scale(baseSize, baseSize);
 }
 
-var dotStartX, dotStartY;
+var dotStartX, dotStartY, dotEndX, dotEndY;
 function startDot(x, y) {
 	var tx = (x - baseX) / baseSize;
 	var ty = (y - baseY) / baseSize;
@@ -202,13 +164,13 @@ function startDot(x, y) {
 	}
 }
 
-function endDot(x, y) {
+function moveDot(x, y) {
 	if (!dotStartX) {
 		return;
 	}
 
-	var dotEndX = (x - baseX) / baseSize;
-	var dotEndY = (y - baseY) / baseSize;
+	dotEndX = (x - baseX) / baseSize;
+	dotEndY = (y - baseY) / baseSize;
 
 	var nvx = 5*(dotEndX - dotStartX);
 	var nvy = 5*(dotEndY - dotStartY);
@@ -218,7 +180,19 @@ function endDot(x, y) {
 	{
 		nvx /= (mag / maxPower);
 		nvy /= (mag / maxPower);
+
+		dotEndX = dotStartX + nvx/5;
+		dotEndY = dotStartY + nvy/5;
 	}
+}
+
+function endDot() {
+	if (!dotStartX) {
+		return;
+	}
+
+	var nvx = 5*(dotEndX - dotStartX);
+	var nvy = 5*(dotEndY - dotStartY);
 
 	var newDot = {
 		x: dotStartX,
@@ -228,18 +202,12 @@ function endDot(x, y) {
 		obj: $('<div class="dot" />'),
 		radius: dotRadius
 	};
-	main.append(newDot.obj);
 	dots.push(newDot);
 
 	dotStartX = dotStartY = null;
-
-	if (!tickTimer)	{
-		tickTimer = window.requestAnimationFrame(tickFunc);
-		lastTimestamp = performance.now();
-	}
+	dotEndX = dotEndY = null;
 }
 
-var lastTimestamp;
 function tickFunc(timestamp) {
 	var dT = (timestamp - lastTimestamp)/1000;
 	lastTimestamp = timestamp;
@@ -295,7 +263,7 @@ function tickFunc(timestamp) {
 
 			nextLevel();
 
-			return;
+			break;
 		}
 
 		dot.vx += dT * aX;
@@ -311,9 +279,59 @@ function tickFunc(timestamp) {
 		i++;
 	}
 
-	if (dots.length) {
-		tickTimer = window.requestAnimationFrame(tickFunc);
-	} else {
-		tickTimer = null;
+	tickTimer = window.requestAnimationFrame(tickFunc);
+
+	render();
+}
+
+function render()
+{
+	context.clearRect(0, 0, 1, 1);
+
+	fillCircle(start.x, start.y, start.radius + 0.003 * Math.sin(lastTimestamp/300), colorGreen);
+	fillCircle(end.x, end.y, end.radius + 0.003 * Math.sin(Math.PI/2 + lastTimestamp/300), colorBlue);
+
+	for (var i=0; i<gravs.length; i++) {
+		var grav = gravs[i];
+
+		fillCircle(grav.x, grav.y, grav.radius, grav.color);
 	}
+
+	for (var i=0; i<dots.length; i++) {
+		var dot = dots[i];
+
+		fillCircle(dot.x, dot.y, dot.radius, colorCyan);
+	}
+
+	if (dotStartX && dotEndX) {
+		drawArrow(dotStartX, dotStartY, dotEndX, dotEndY, 0.007, colorRed, 0.001);
+	}
+}
+
+function fillCircle(x, y, radius, color)
+{
+	context.beginPath();
+	context.arc(x, y, radius, 0, 2 * Math.PI, false);
+	context.fillStyle = color;
+	context.fill();
+}
+
+function drawArrow(x1, y1, x2, y2, headSize, color, thickness)
+{
+	var angle = Math.atan2(y2-y1, x2-x1);
+
+	context.beginPath();
+	context.moveTo(x1, y1);
+	context.lineTo(x2, y2);
+	context.strokeStyle = color;
+	context.lineWidth = thickness;
+	context.stroke();
+
+	context.beginPath();
+	context.moveTo(x2, y2);
+	context.lineTo(x2 + headSize * Math.cos(angle + 3*Math.PI/4), y2 + headSize * Math.sin(angle + 3*Math.PI/4));
+	context.lineTo(x2 + headSize * Math.cos(angle + 5*Math.PI/4), y2 + headSize * Math.sin(angle + 5*Math.PI/4));
+	context.lineTo(x2, y2);
+	context.fillStyle = color;
+	context.fill();
 }

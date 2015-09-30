@@ -5,81 +5,12 @@ html, body {
 	margin: 0px;
 	background: #333;
 	overflow: hidden;
+	user-select: none;
 }
 
-#main {
+canvas {
 	display: block;
 	position: absolute;
+	pointer-events:none;
 	background: black;
-	overflow: hidden;
-	pointer-events:none;
-}
-
-#main .start {
-	position: absolute;
-	cursor: pointer;
-	background-color: rgba(30, 255, 40, 0.7);
-	border-radius: 50%;
-	pointer-events:all;
-
-	-webkit-animation: pulse 2s ease-out;
-	-moz-animation: pulse 2s ease-out;
-	animation: pulse 2s ease-out;
-	-webkit-animation-iteration-count: infinite;
-	-moz-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-}
-
-#main .end {
-	position: absolute;
-	background-color: rgba(30, 50, 255, 0.7);
-	border-radius: 50%;
-	pointer-events:none;
-}
-
-#main .grav {
-	position: absolute;
-	border-radius: 50%;
-	pointer-events:none;
-}
-
-#main .dot {
-	position: absolute;
-	background-color: rgba(30, 255, 255, 0.7);
-	border-radius: 50%;
-	pointer-events:none;
-}
-
-@keyframes pulse {
- 0% {
-	transform: scale(0.9);
- }
- 50% {
-	transform: scale(1.1);
- }
- 100% {
-	transform: scale(0.9);
- }
-}
-@-moz-keyframes pulse {
- 0% {
-	-moz-transform: scale(0.9);
- }
- 50% {
-	-moz-transform: scale(1.1);
- }
- 100% {
-	-moz-transform: scale(0.9);
- }
-}
-@-webkit-keyframes "pulse" {
- 0% {
-	-webkit-transform: scale(0.9);
- }
- 50% {
-	-webkit-transform: scale(1.1);
- }
- 100% {
-	-webkit-transform: scale(0.9);
- }
 }
