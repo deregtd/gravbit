@@ -119,6 +119,8 @@ function rebuild() {
 	end = levels[level].end;
 	gravs = levels[level].gravs;
 	maxPower = levels[level].maxPower;
+
+	body.css('cursor', 'auto');
 }
 
 function nextLevel() {
@@ -148,8 +150,6 @@ function resize() {
 
 	canvas.css({ top: baseY + 'px', height: baseSize + 'px', left: baseX + 'px', width: baseSize + 'px' });
 	canvas[0].width = canvas[0].height = baseSize;
-
-	context.scale(baseSize, baseSize);
 }
 
 var dotStartX, dotStartY, dotEndX, dotEndY;
@@ -165,12 +165,22 @@ function startDot(x, y) {
 }
 
 function moveDot(x, y) {
+	var xT = (x - baseX) / baseSize;
+	var yT = (y - baseY) / baseSize;
+
+	var distSquared = (Math.pow(xT - start.x, 2) + Math.pow(yT - start.y, 2));
+	if (distSquared < start.radius*start.radius) {
+		body.css('cursor', 'pointer');
+	} else {
+		body.css('cursor', 'auto');
+	}
+
 	if (!dotStartX) {
 		return;
 	}
 
-	dotEndX = (x - baseX) / baseSize;
-	dotEndY = (y - baseY) / baseSize;
+	dotEndX = xT;
+	dotEndY = yT;
 
 	var nvx = 5*(dotEndX - dotStartX);
 	var nvy = 5*(dotEndY - dotStartY);
@@ -286,6 +296,9 @@ function tickFunc(timestamp) {
 
 function render()
 {
+	context.setTransform(1, 0, 0, 1, 0, 0);
+	context.scale(baseSize, baseSize);
+
 	context.clearRect(0, 0, 1, 1);
 
 	fillCircle(start.x, start.y, start.radius + 0.003 * Math.sin(lastTimestamp/300), colorGreen);
@@ -306,6 +319,15 @@ function render()
 	if (dotStartX && dotEndX) {
 		drawArrow(dotStartX, dotStartY, dotEndX, dotEndY, 0.007, colorRed, 0.001);
 	}
+
+	context.setTransform(1, 0, 0, 1, 0, 0);
+
+	// font rendering is messed up with a scale transform :(
+	context.font = (baseSize/30) + 'px arial';
+	context.textBaseline = 'top';
+	context.textAlign = 'right';
+	context.fillStyle = 'white';
+	context.fillText('Level ' + (level + 1), baseSize, 0);
 }
 
 function fillCircle(x, y, radius, color)
