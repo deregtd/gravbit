@@ -159,8 +159,8 @@ function startDot(x, y) {
 
 	if (Math.pow(ty - start.y, 2) + Math.pow(tx - start.x, 2) <= start.radius*start.radius)
 	{
-		dotStartX = tx;
-		dotStartY = ty;
+		dotEndX = dotStartX = tx;
+		dotEndY = dotStartY = ty;
 	}
 }
 
@@ -316,7 +316,7 @@ function render()
 		fillCircle(dot.x, dot.y, dot.radius, colorCyan);
 	}
 
-	if (dotStartX && dotEndX) {
+	if (dotStartX && dotEndX && (dotStartX != dotEndX || dotStartY != dotEndY)) {
 		drawArrow(dotStartX, dotStartY, dotEndX, dotEndY, 0.01, colorRed, 0.003);
 	}
 
@@ -335,13 +335,9 @@ function render()
 		context.textBaseline = 'middle';
 		context.textAlign = 'center';
 		context.fillStyle = 'black';
-		context.fillText('Start', start.x * baseSize, start.y * baseSize);
 
-		// noob help
-		context.font = (baseSize/40) + 'px arial';
-		context.textBaseline = 'middle';
-		context.textAlign = 'center';
-		context.fillStyle = 'black';
+		context.fillText(dotStartX ? 'Drag' : 'Start', start.x * baseSize, start.y * baseSize);
+
 		context.fillText('Target', end.x * baseSize, end.y * baseSize);
 	}
 }
