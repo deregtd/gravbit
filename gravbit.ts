@@ -9,6 +9,7 @@ class Color {
     static Red = 'rgba(210, 50, 40, 1)';
     static Yellow = 'rgba(255, 255, 40, 1)';
     static Gray = 'rgba(140, 140, 140, 1)';
+    static White = 'rgba(255, 255, 255, 1)';
 }
 
 // moving bodies?
@@ -325,7 +326,17 @@ function render() {
     for (var i = 0; i < dots.length; i++) {
         var dot = dots[i];
 
-        fillCircle(dot, dot.radius, Color.Cyan);
+        var angle = Math.atan2(dot.vy, dot.vx);
+
+        context.beginPath();
+        context.moveTo(dot.x + dot.radius * Math.cos(angle), dot.y + dot.radius * Math.sin(angle));
+        context.lineTo(dot.x + dot.radius * Math.cos(angle + 3 * Math.PI / 4), dot.y + dot.radius * Math.sin(angle + 3 * Math.PI / 4))
+        context.lineTo(dot.x + dot.radius * Math.cos(angle + 5 * Math.PI / 4), dot.y + dot.radius * Math.sin(angle + 5 * Math.PI / 4));
+        context.lineTo(dot.x + dot.radius * Math.cos(angle), dot.y + dot.radius * Math.sin(angle));
+        context.fillStyle = Color.White;
+        context.fill();
+        context.strokeStyle = Color.White;
+        context.stroke();
     }
 
     if (dotStart && dotEnd && (dotStart.x != dotEnd.x || dotStart.y != dotEnd.y)) {
