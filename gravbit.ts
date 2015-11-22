@@ -147,6 +147,7 @@ $(window).resize(function () {
 });
 
 function rebuild() {
+    dotStart = dotEnd = null;
     dots = [];
 
     level = levels[levelNumber];
