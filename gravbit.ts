@@ -94,6 +94,18 @@ const levels: ILevel[] = [
         start: { x: 0.5, y: 0.9, radius: 0.05 },
         end: { x: 0.5, y: 0.1, radius: 0.05 }
     },
+
+    // 4
+    {
+        maxPower: 1.0,
+        gravs: [
+            { x: 0.2, y: 0.5, radius: 0.1, mass: 100, color: Color.Red },
+            { x: 0.6, y: 0.3, radius: 0.1, mass: 100, color: Color.Red },
+            { x: 1.1, y: 0.5, radius: 0.3, mass: 500, color: Color.Yellow }
+        ],
+        start: { x: 0.6, y: 0.1, radius: 0.05 },
+        end: { x: 0.6, y: 0.9, radius: 0.05 }
+    },
 ];
 
 var levelNumber = 0;
